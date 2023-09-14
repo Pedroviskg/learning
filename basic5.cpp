@@ -1,0 +1,58 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+
+//Teste de switches
+
+using namespace std;
+
+main() {
+
+int num;
+
+cin >> num ;
+
+  switch (num) {
+
+   case 1:
+    cout << "segunda";
+    break;
+
+   case 2:
+    cout << "terca";
+    break;
+
+   case 3:
+    cout << "quarta";
+    break;
+
+   case 4:
+    cout << "quinta";
+    break;
+
+   case 5:
+    cout << "sexta";
+    break;
+
+   case 6:
+    cout << "sabado";
+    break;
+
+   case 7:
+    cout << "domingo";
+    break;
+
+   default:
+    cout << "monday left me broken";
+    break;
+
+/* serve APENAS para INTEIROS
+DEFAULT - CASO NÃO HAJA NENHUM, DEFAULT SERÁ USADO */
+
+  }
+
+
+
+
+return 0;
+}

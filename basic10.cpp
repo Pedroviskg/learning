@@ -1,4 +1,6 @@
 #include <iostream>
+#include <cmath>
+//Não usei o cmath aqui, mas pensei que poderia usar, então o adicionei. 
 using namespace std;
 
 main(){

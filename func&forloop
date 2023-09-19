@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+//Somatorio e fatorial de numeros usando o laço for
+
+void Intro(){
+cout << "Somatorio e fatorial. Digite os numeros que voce deseja. \n";
+}
+
+void Som(){
+cout << "Digite o N do somatorio: ";
+  int n, i, soma = 0;
+cin >> n;
+
+  for (i = 1; i <= n; i++)
+    soma += i;
+cout << soma << "\n";
+}
+
+void Fac(){
+cout << "Digite o N do fatorial: ";
+  int n, i, fac = 1;
+cin >> n;
+  for (i = 1; i <= n; i++)
+    fac *= i;
+cout << fac;
+}
+
+int main(){
+
+Intro();
+Som();
+Fac();
+
+
+return 0;
+}

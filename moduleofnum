@@ -1,0 +1,33 @@
+#include <iostream>  // for std::cout and std::cin
+
+int main()
+{
+  std::cout << "Enter a integer: ";
+  int int1 {};
+  std::cin >> int1;
+
+  std::cout << "Enter another integer: ";
+  int int2 {};
+  std::cin >> int2;
+
+  int sum {int1 + int2};                                           //using new int's to make the code shorter
+  int dif {int1 - int2};                                           //........................................335
+
+  std::cout << "The sum of " << int1 << " and " << int2 << " is " << sum << ".\n";
+  std::cout << "The difference of " << int1 << " and " << int2 << " is " << dif << ".\n\n";
+
+ if ((dif) < 0)
+{
+
+    std::cout << "The module of the difference is " << (dif)*(-1); //if the difference of the numbers is less than zero,
+                                                                   //then return the difference multiplied by (-1)
+}
+ else
+{
+
+    std::cout << "The module of the difference is " << (dif);      //else return the difference without alterations
+
+}
+
+return 0;
+}

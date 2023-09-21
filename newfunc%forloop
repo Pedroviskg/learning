@@ -1,0 +1,51 @@
+#include <iostream>
+using namespace std;
+
+//Somatorio e fatorial de numeros usando o laço for
+//Esse novo programa é uma melhoria do outro programa de fatorial e somatorio.
+//Aora não é mais necessário definir o input para cada função. Um valor n definido pelo
+//usuário declara o número para todas as funções, deixando o programa menos redundante.
+
+void Intro(){
+cout << "Somatorio e fatorial. Digite os numeros que voce deseja. \n";
+}
+
+void Som(int n)                                   //declarando n aqui. Perceba que não é necessário declarar n de novo na função som()
+{                                
+
+  int i {};
+  int soma {0};
+
+  for (i = 1; i <= n; i++)
+    soma += i;
+cout << "O somatario eh: " << soma << "\n";
+
+}
+
+void Fac(int n)                                   //mesma coisa do comentário sobre a função Som() 
+{                      
+
+  int i {};
+  int fac {1};
+
+  for (i = 1; i <= n; i++)
+    fac *= i;
+cout << "O fatorial eh " << fac;
+
+}
+
+int main(){
+
+
+Intro();
+
+cout << "Coloque o N: ";
+int n {};                                         //aqui é definido o valor de n. Perceba que a escolha de n como varíavel foi opcional
+cin >> n;
+
+Som(n);                                           //Executa a função Som() com a variável n definida pelo input
+Fac(n);                                           //Executa a função Fac() com a variável n definida pelo input
+
+
+return 0;
+}

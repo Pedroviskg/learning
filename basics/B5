@@ -47,7 +47,7 @@ cin >> num ;
     break;
 
 /* serve APENAS para INTEIROS
-DEFAULT - CASO N√O HAJA NENHUM, DEFAULT SER¡ USADO */
+DEFAULT - CASO N√ÉO HAJA NENHUM, DEFAULT SER√Å USADO */
 
   }
 

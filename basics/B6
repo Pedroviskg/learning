@@ -13,9 +13,9 @@ do {
  i++;
 } while (i < 6);
 
-//o while repete uma ação até que seu estado seja alcançado
+//o while repete uma aÃ§Ã£o atÃ© que seu estado seja alcanÃ§ado
 
-//agora, usa-se do/while para que uma ação seja feita ao menos que seu estado seja alterado.
+//agora, usa-se do/while para que uma aÃ§Ã£o seja feita ao menos que seu estado seja alterado.
 
  /* do {
     cout << num << "\n";

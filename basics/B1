@@ -1,11 +1,11 @@
 #include <iostream>
-//iostream é a bibiloteca que estou utilizando.
+//iostream Ã© a bibiloteca que estou utilizando.
 
 using namespace std;
-/*usar o std antes do programa é melhor que usar
+/*usar o std antes do programa Ã© melhor que usar
 std::*/
 
-int main(){ //é a função principal. Usar "{}" para finalizar
+int main(){ //Ã© a funÃ§Ã£o principal. Usar "{}" para finalizar
 
 const float myNum = 69.21;
 //const fixa a constante
@@ -15,14 +15,14 @@ const float myNum = 69.21;
 
  int x;
  cin >> x;
-/*cin >> é usado para digitar. Perceber que
->> é para input*/
+/*cin >> Ã© usado para digitar. Perceber que
+>> Ã© para input*/
 
  int y;
  cout<< "Entao o seu e o numero " << x << ". Digita outro numero para a gente somar \n\n";
  cin >> y;
  cout << "Entao a soma dos seus numeros e do meu e " << x + y + myNum;
 
- //cout é a função (print)
+ //cout Ã© a funÃ§Ã£o (print)
  return 0;
  }

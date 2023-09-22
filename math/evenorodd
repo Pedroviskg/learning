@@ -1,0 +1,25 @@
+#include <iostream>
+
+//tentar fazer o computador entender se um número é par ou ímpar
+
+
+int main()
+{
+
+  std::cout << "Choose the number to define if it is even or odd: ";
+  int num{};
+  std::cin >> num;
+
+
+if (num%2 == 0)                                                //Define que o num mod 2 deve ser 0. Ou seja, o resto da divisão de num por 2 é um inteiro
+{
+    std::cout << "This number is even.";                       //Caso num mod 2 = 0, então mostrar a mensagem "Este número é par".
+    
+} else
+{
+
+    std::cout << "This numbers is odd.";                       //Caso num mod 2 != 0, então mostrar a mensagem "Este número é ímpar". 
+
+}
+return 0;
+}

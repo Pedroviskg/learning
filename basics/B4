@@ -3,7 +3,7 @@
 #include <string>
 
 #include <cmath>
-//cmath é módulo de matemática. São diversas funções.
+//cmath Ã© mÃ³dulo de matemÃ¡tica. SÃ£o diversas funÃ§Ãµes.
 
 using namespace std;
 
@@ -30,10 +30,10 @@ cin >> txt;
 
  cout << ex;
 
- menos linhas para a mesma função. Perceba que agora usa-se
+ menos linhas para a mesma funÃ§Ã£o. Perceba que agora usa-se
  uma string para definir o resultado de txt
 
- else if garante uma via do meio se if é falso */
+ else if garante uma via do meio se if Ã© falso */
 
 
 cout << (xis) << "\n" << round(xis) << "\n" << floor(xis) << "\n";

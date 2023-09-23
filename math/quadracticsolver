@@ -1,0 +1,60 @@
+#include <iostream>
+#include <cmath>
+
+// This program its self explanatory. It solves quadractic equations of the type ax + bx + c = 0
+// Personal note: I'm really improving in undestanding how functions() works in C++!
+
+void welc()
+{
+    std::cout << "Welcome! Solve your quadratic equation here for ax + bx + c = 0\n";
+}
+
+double disc(double a, double b, double c)
+{
+
+    double delt {b*b - 4*a*c};
+    double z = delt;
+    return z;
+}
+
+void sol1(double x, double b, double a)
+{
+       std::cout << (-b + sqrt(x))/2*a;
+}
+
+void sol2(double x, double b, double a)
+{
+       std::cout << (-b - sqrt(x))/2*a;
+}
+
+
+int main()
+{
+    welc();
+
+    std::cout << "Insert a of the equation ";
+    double a{};
+    std::cin >> a;
+
+    std::cout << "Insert b of the equation ";
+    double b{};
+    std::cin >> b;
+
+    std::cout << "Insert c of the equation ";
+    double c{};
+    std::cin >> c;
+
+    if (disc(a,b,c) >= 0)
+    {
+         std::cout << "The solutions are ";
+         sol1(disc(a, b, c), b, a);
+         std::cout << " and ";
+         sol2(disc(a, b, c), b, a);
+    } else
+    {
+        std::cout << "There is no answer in the R set";
+    }
+
+
+    return 0;
+}

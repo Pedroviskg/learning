@@ -6,12 +6,12 @@
 
 void welc()
  {
-    std::cout << "Welcome! Solve your quadratic equation here for ax + bx + c = 0\n";
+    std::cout << "Welcome! Solve your quadratic equation here for ax + bx + c = 0\n"; 
  }
 
 double disc(double a, double b, double c)
  {
-    double delt {b*b - 4*a*c};
+    double delt {pow(b,2) - 4*a*c};           // Using function pow() from cmath to exponent numbers.
     double z = delt;
     return z;
  }

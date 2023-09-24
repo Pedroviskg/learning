@@ -1,0 +1,65 @@
+#include <iostream>
+#include <cmath>
+
+// This is a improved version of the previous quadratic solver. 
+// Now the functions are more optimized, solutions are not a void type, but return type.
+// The program understands if the solutions of the equations are the same and display a different output for equal and different values.
+// The program understands if a = 0 and return an output informing the user about it
+
+void welcome()
+{
+    std::cout << "Welcome to the quadratic equation solver of the type ax^2 + bx + c = 0 (a must be != 0).\n";
+}
+
+double deltaFunction(double a, double b, double c)
+{
+    return b*b -4*a*c;
+}
+
+double solution1 (double b, double delta, double a)
+{
+    return (-b + sqrt(delta))/2*a;
+}
+
+double solution2 (double b, double delta, double a)
+{
+    return (-b - sqrt(delta))/2*a;
+}
+
+
+int main()
+{
+    welcome();
+
+    std::cout << "Input a: ";
+    double a{};
+    std::cin >> a;
+
+    std::cout << "Input b: ";
+    double b;
+    std::cin >> b;
+
+    std::cout << "Input c: ";
+    double c;
+    std::cin >> c;
+if (a != 0)
+  {  if (deltaFunction(a, b, c) > 0)
+    {
+        std::cout << "The solutions are " << solution1(b, deltaFunction(a, b, c), a) << " and " << solution2(b, deltaFunction(a, b, c), a);
+    }
+
+    else if (deltaFunction(a, b, c) == 0)
+    {
+        std::cout << "The solutions are the same and is " << solution1(b, deltaFunction(a, b, c), a);
+    }
+    else
+    {
+        std::cout << "There are no solutions in the R set.";
+    }
+  }
+else
+{
+std::cout << "The equation is not quadratic";
+}
+    return 0;
+}

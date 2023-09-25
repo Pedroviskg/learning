@@ -3,7 +3,7 @@
 int main ()
 {
 
-    int dividers{1};
+    int dividers{1};                                          // The number num is a divider of itself, so add 1 divisor here
 
     std::cout << "Input a number: ";
     int num {};
@@ -18,14 +18,22 @@ int main ()
         }
 
     }
-
-    if (dividers > 2)
-    {
-        std::cout << "The number isn't a prime.";
-    } else
-    {
-        std::cout << "The number is a prime.";
-    }
+        
+        if (num != 1)
+        {
+            
+            if (dividers > 2)                                  // If the program found more than 2 dividers, then the number is not a prime
+           {
+              std::cout << "The number isn't a prime.";
+        
+           } else
+           {
+              std::cout << "The number is a prime.";
+           }
+           
+        } else {
+              std::cout << "One is not a prime.";
+          }
 
     return 0;
 }

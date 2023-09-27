@@ -1,6 +1,7 @@
 #include <iostream>
-#include <cstddef> // width of integers. Not very useful afaik
-#include <string>  // This one is more useful. Introduces std::string and std::getline()
+#include <cstddef>      // width of integers. Not very useful afaik
+#include <string>       // This one is more useful. Introduces std::string and std::getline()
+#include <string_view>  // Allows std::string_view
 
 int main()
 {
@@ -41,6 +42,8 @@ int main()
    int length (static_cast<int>(name.length()));
    std::cout << length;
 
+
+   std::string_view newName {};                      // Can only be view, but not modified. Useful for constexpr. This can afford C-Style and std::string values.
 
 
 

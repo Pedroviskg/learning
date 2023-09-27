@@ -1,0 +1,54 @@
+#include <iostream>
+#include <cstddef> // width of integers. Not very useful afaik
+#include <string>  // This one is more useful. Introduces std::string and std::getline()
+
+int main()
+{
+    // Bits, byts and size
+
+   std::cout << sizeof(int) << "\n";                 // Use sizeof to find out the size of the file (in bytes. 1 Byte = 8 possible bits).
+   std::cout << sizeof(long long int) << "\n";       // long long uses 8 bytes. More info, but consumes more memory.
+   std::cout << sizeof(short int) << "\n";           // short has just 2 bytes.
+                                                     // Remember that signed int is negative to positive and unsigned just negative.
+
+   double num = 5.2;
+   std::cout << static_cast<int>(num) << " " << num; // No problem transforming a double into a int. The thing is that the decimal parti (0.2) is lost.
+
+
+   // Constants, binary, hexadecimal and octal
+
+
+   const int newNum {14};                            // Defines newNum as a constant
+   std::cout << "\n" << newNum;
+   constexpr int braveNewNum (13);                   // Guarantee to the compiler that the type is a constant
+   std::cout << "\n" << braveNewNum << "\n";
+
+   std::cout << 0x11 << "\n";                        // 11 in hexadecimal is 17 in the decimal system. Use 0x to define as hexadecimal
+   std::cout << 011 << "\n";                         // 11 in octal is 9 in the decimal system
+                                                     // Use std::hex, std::oct, std::dec to make the compiler show the system the number will display.
+                                                     // Default is decimal
+
+
+
+   // Strings and variables with it
+
+
+
+   std::cout << "Input your name: ";
+   std::string name {};
+   std::getline(std::cin >> std::ws, name);          // Need to use std::ws to ignore the enter key and , to name. getline() reads all the line and don't "store".
+   std::cout << name << "\n";
+   int length (static_cast<int>(name.length()));
+   std::cout << length;
+
+
+
+
+
+
+
+
+
+   return 0;
+}
+

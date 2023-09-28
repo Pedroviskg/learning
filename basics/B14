@@ -1,0 +1,43 @@
+#include <iostream>
+
+bool testFunction()
+{
+
+    int a{};
+    int b{};
+    std::cin >> a;
+    std::cin >> b;
+ return (a > b && true);
+}
+
+int main()
+{
+    // Operadores lógicos (++a, a++)
+
+    int num {10};                                        // Define num = 10
+    num = num + 2;                                       // Define num como sendo o num (10) + 2. Ou seja, 12.
+    std::cout << num << std::endl;                       // Como num foi redefinido com num = num + 2, então num será mostrado como 12.
+
+    int newNum {12};
+    newNum+=2;                                           // newNum = newNum + 2 pode ser reescrito simplesmente como newNum+=2
+    std::cout << newNum << std::endl;
+
+    int superNewNum {13};
+    std::cout << superNewNum++ << std::endl;             // Apenas printa 13, mas superNewNum é 14 a a partir de agora. Veja a nova linha:
+    std::cout << superNewNum << std::endl;               // Mostra 14
+    std::cout << ++superNewNum << std::endl;             // Primeiro adiciona 1 para superNewNum e printa o resultado. No caso, o resultado é 15.
+
+
+    // Operadores lógicos booleanos: um jeito mais fácil de representar condições.
+
+
+    (4<3) ? std::cout << "true": std::cout << "false";   // Forma minimizada de if/else. (condição) ? a:b.
+    std::cout << std::endl;                              // Resumindo: se a condição for verdade, fazer a operação a. Se não, fazer operação b.
+    std::cout << std::boolalpha << testFunction();       // Use && para que duas que o programe retorne 1 se todas as condições forem verdades.
+                                                         // Use barra vertical dupla para que mostrar true se qualquer condição for verdade.
+                                                         // Usando std::boolalpha para mostrar true ou false em vez de 1 ou 0.
+
+
+
+
+}

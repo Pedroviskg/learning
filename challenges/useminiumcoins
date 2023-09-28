@@ -1,0 +1,55 @@
+#include <iostream>
+#include <cmath>
+
+// Criar um programa usando moedas de 0.25, 0.10, 0.05 e 0.01
+
+
+int main()
+{
+
+    std::cout << "Insira o valor da moeda: ";
+    double tipo {};
+    std::cin >> tipo;
+
+    int valor {tipo*100};
+    int moedas {};
+    int total = 0;
+do
+{
+
+
+    if (total + 25 <= valor)
+    {
+        total = total + 25;
+        moedas++;
+    } else
+        {
+        if (total + 10 <= valor)
+        {
+            total = total + 10;
+            moedas++;
+        }   else
+            {
+                if (total + 5 <= valor)
+                {
+                    total = total + 5;
+                    moedas++;
+                } else
+                  {
+                    if (total + 1 <= valor)
+                    {
+                        total = total + 1;
+                        moedas++;
+                    }
+                  }
+            }
+        }
+
+
+} while (total < valor);
+
+std::cout << "O mínimo possível de moedas é " << moedas;
+
+return 0;
+
+}

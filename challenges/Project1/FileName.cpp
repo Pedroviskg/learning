@@ -14,36 +14,23 @@ int main()
 	std::cout << numberLength(cardNum) << std::endl;
 	
 	
-	// Sum of the digits. Starts from the last digit.
+	// Sum of the digits
 
 
 	 int sum1 {(cardNum % 10)};                                    // Counts starting for the last digit
 	
-	for (long long int i = 100; i < cardNum; i = i * 100)          
+	for (long long int i = 100; i < cardNum; i = i * 100)
 	{
-		int digitSum1{ (cardNum / i) % 10 };                  // No need to verify the double of number
-		sum1 = sum1 + digitSum1; 
+		int digitSum1{ (cardNum / i) % 10 };
+		sum1 = sum1 + digitSum1;
 		
 	}
 
-        // Defines the first digit of the last but one number. If it's bigger than 9, then the number has two digits (in the integers set).
 	
-	int sum2{};
-	int isItBig{(((cardNum / 10) % 10)) };
-	if (2*isItBig >= 10)
-	{
-		int doubleiTB = 2 * isItBig;
-		int firstDigit = doubleiTB % 10;
-		int secondDigit = (doubleiTB / 10) % 10;
-		int g = (firstDigit + secondDigit);
-		sum2 = g;
-	}
-	else
-	{
-		sum2 = 2*isItBig;
-	}
-                           
-        // Sum of the last but one digit.
+	int sum2{ lastOneDig(cardNum) };
+
+	
+                           // Counts starting for the last but one
 	
 	for (long long int j = 1000; j < cardNum; j = j * 100)
 	{
@@ -68,7 +55,7 @@ int main()
 
 	int valid{ ( sum1 + sum2) % 10 };
 	
-        // Validation and printing the result and flag
+    // Validation and printing the result and flag
 
 	if (valid == 0)
 	{

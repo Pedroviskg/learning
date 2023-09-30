@@ -1,0 +1,75 @@
+#include <iostream>
+
+// Staircase pyramid
+
+int main()
+{
+
+// Heigth of the pyramid
+
+tryAgain:  //goto command
+    std::cout << "Input the length and width of the pyramid: ";
+    int stairDim{};
+    std::cin >> stairDim;
+    if (stairDim > 8 || stairDim < 1)
+    {
+        goto tryAgain;
+    }
+
+    // Top block of the pyramid
+
+    int j{};
+    int i{2};
+    int space{};
+
+    int firstBlock{ stairDim };
+
+    do
+    {
+        std::cout << " ";
+        firstBlock--;
+        
+    } while (firstBlock >=  1);
+    std::cout << "#";
+    std::cout << std::endl;
+   
+    // Initiates for loop from the height of the pyramid. 
+
+    for (j = stairDim; j > 0; j--)
+    {
+        // How many spaces it is needed before inserting the "#"
+
+        for (space = stairDim; space > i; space--)
+        {
+            std::cout << " ";
+        }
+        int m{ i };
+
+        // Starts the times that "#" will be placed
+        if (space == i)
+        {
+            std::cout << " ";
+        }
+         
+        
+            do
+            {
+                std::cout << "#";
+                m--;
+            } while (m > 0);
+        
+
+        // Adds two spaces and starts building the from the right side of the pyramid.
+
+
+        int p{};
+        for (p = 1; p <= i - 1; p++)
+        {
+            std::cout << "#";
+        }
+
+        std::cout << std::endl;
+        i = i + 1;
+    }
+    return 0;
+}

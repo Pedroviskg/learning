@@ -1,0 +1,36 @@
+#include <iostream>
+
+// n = population
+// n/3 are born, n/4 dies
+
+int main()
+{
+tryAgainStart:
+	std::cout << "Input the start population: ";
+	int initPop{};
+	std::cin >> initPop;
+	if (initPop < 9)
+	{
+		goto tryAgainStart;
+	}
+
+tryAgainEnd:
+	std::cout << "Input the end population: ";
+    int finalPop{};
+	std::cin >> finalPop;
+	if (finalPop <= initPop)
+	{
+		goto tryAgainEnd;
+	}
+
+	int years{};
+
+	do
+	{
+		initPop = initPop - (initPop / 4) + (initPop / 3);
+		years++;
+
+	} while (initPop < finalPop);
+	std::cout << "It's gonna take " << years << " years to achieve the desired population.";
+		return 0;
+}

@@ -16,8 +16,9 @@ int main()
 	
 	// Sum of the digits
 
+	// Counts starting for the last digit
 
-	 int sum1 {(cardNum % 10)};                                    // Counts starting for the last digit
+	int sum1 {(cardNum % 10)};                                    
 	
 	for (long long int i = 100; i < cardNum; i = i * 100)
 	{
@@ -30,7 +31,7 @@ int main()
 	int sum2{ lastOneDig(cardNum) };
 
 	
-                           // Counts starting for the last but one
+    // Counts starting for the last but one
 	
 	for (long long int j = 1000; j < cardNum; j = j * 100)
 	{

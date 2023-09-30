@@ -1,0 +1,51 @@
+#include <iostream>
+
+/*
+X X X X 1
+X X X 2 1
+X X 3 2 1
+X 4 3 2 1
+5 4 3 2 1
+*/
+
+// i = linhas; j = colunas
+
+
+int main()
+{
+	tryAgain:
+	std::cout << "Choose the length and width of the staircase: ";
+	int numBlock{};
+	std::cin >> numBlock;
+
+	if ( (numBlock > 8) || (numBlock < 1))
+		goto tryAgain;
+
+	int j = numBlock;
+	int i = 1;
+	while (j > 0)
+	{
+		int m = i;
+		int n = numBlock;
+		while (n > i)
+		{
+			std::cout << " ";
+			n--;
+		}
+		if (n == i)
+		{
+		while (m >= 1)
+			{
+
+			std::cout << "#";
+				m--;
+				
+			}
+		}
+		std::cout << std::endl;
+		j--;
+		i++;
+	}
+
+return 0;
+}

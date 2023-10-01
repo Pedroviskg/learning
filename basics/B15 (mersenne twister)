@@ -1,0 +1,20 @@
+#include <iostream>
+#include <random> // adds a bunch of methods for random generator.
+#include <chrono> // adds time-based functions
+
+// Mersenne Twister - (Pseudo) Random Number Generator
+
+int main()
+{
+	//std::mt19937 randomNum{ static_cast<std::mt19937::result_type>(         // Don't use this and the guide quite doesn't explain it.
+//    std::chrono::steady_clock::now().time_since_epoch().count()) };
+
+	
+    std::mt19937 randomNum{ std::random_device{}() };                         // Use random_device{}() for seeding the mersenne twister
+
+	std::uniform_int_distribution dice6{ 1,10 };
+
+	std::cout << dice6(randomNum);
+
+	return 0;
+}

@@ -1,0 +1,65 @@
+#include <iostream>
+
+// Switch cases, break, continue, goto
+// Use [[fallthrough]] to ignore the break and not switch cases.
+int main()
+{
+
+	// Switch - Works only with int or chars
+	// use 
+
+	/*std::cout << "Chose two integers (choose one and press enter to the next): ";
+	int a{};
+	int b{};
+	std::cin >> a;
+	std::cin >> b;
+
+	std::cout << "Choose the operator [+ (a), - (b), / (c), * (d), % (e)]: ";
+	char op{};
+	std::cin >> op;
+
+	// a = sum, b = minus, c = division, d = multiplication, e = remainder
+
+	switch (op)
+	{
+	case 'a':
+		std::cout << a + b;
+		break;
+	case 'b':
+		std::cout << a - b;
+		break;
+	case 'c':
+		std::cout << a / b;
+		break;
+	case 'd':
+		std::cout << a * b;
+		break;
+	case 'e':
+		std::cout << a % b;
+		break;
+	default:
+		std::cout << "Invalid operator. Try again";
+	}
+
+	std::cout << std::endl; */
+
+
+	// Goto and labels - Function Scope (Not very used)
+
+	std::cout << "Enter a number less than 10: ";
+
+tryAgain:                 // Label here. It's like a checkpoint
+
+	int number{};
+	std::cin >> number;
+	if (number > 9)
+		goto tryAgain;    // If the number is less than 10, the goto goes to tryAgain label
+
+
+	// Loops - while loop; do/while loop; for loop.
+	// break; and continue; -- break stops completely the block while continue just jumps to the next iteration 
+	
+
+
+	return 0;
+}

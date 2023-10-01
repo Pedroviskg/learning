@@ -1,39 +1,43 @@
 #include <iostream>
+#include <cmath>
 
-int main ()
+void isItPrime(int number)
 {
+	if (number == 1)
+	{
+		std::cout << "The number is not a prime.";
+	}
+	else {
 
-    int dividers{1};                                          // The number num is a divider of itself, so add 1 divisor here
-
-    std::cout << "Input a number: ";
-    int num {};
-    std::cin >> num;
 
 
-    for (int i = 1; i <= num/2; i++)
-    {
-        if (num % i == 0)
-        {
-            dividers++;
-        }
+		int dividers{ 1 };
 
-    }
-        
-        if (num != 1)
-        {
-            
-            if (dividers > 2)                                  // If the program found more than 2 dividers, then the number is not a prime
-           {
-              std::cout << "The number isn't a prime.";
-        
-           } else
-           {
-              std::cout << "The number is a prime.";
-           }
-           
-        } else {
-              std::cout << "One is not a prime.";
-          }
+		for (int tester = 1; tester <= sqrt(number); tester++)
+		{
+			if (number % tester == 0)
+			{
+				dividers++;
+			}
+		}
+		if (dividers == 2)
+		{
+			std::cout << "The number is prime.";
+		}
+		else
+		{
+			std::cout << "The number is not a prime.";
+		}
+	}
+}
 
-    return 0;
+int main()
+{
+	std::cout << "Choose the number: ";
+	int number{};
+	std::cin >> number;
+	
+	isItPrime(number);
+	return 0;
+
 }

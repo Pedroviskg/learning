@@ -19,7 +19,7 @@ starthere:
 	if ((number > 100) || (number < 1))
 	{
 		std::cin.clear();
-		std::cin.ignore();
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max());
 		goto starthere;
 	}
 

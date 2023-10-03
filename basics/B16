@@ -1,0 +1,29 @@
+#include <iostream>
+
+void sort2(int& x, int& y)
+{
+    if (x > y)
+    {
+        int k{ x };
+        x = y;
+        y = k;
+
+    }
+}
+
+int main()
+{
+    int x{};
+    std::cin >> x;
+    
+    int y{};
+    std::cin >> y;
+
+    sort2(x, y);
+    std::cout << x << ' ' << y << '\n';
+
+    sort2(x, y);
+    std::cout << x << ' ' << y << '\n';
+
+    return 0;
+}

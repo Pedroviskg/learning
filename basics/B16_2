@@ -1,0 +1,74 @@
+// Referencies - lvalue (evaluates identifiers) and rvalues (return things)
+
+// template:
+// template <typename T>
+// T function(T x, T y)
+
+// Use & to ref to something.
+
+// int x {a};                    ---------------------- Is the referent.            
+// int& y {x};                   ---------------------- Is the referencer. 
+// Now if y is modified, x will be modified too.
+
+
+// Changing the value o x is okay, but it's not okay changing the value of y (because it is a const).
+/*int main()
+{
+	int x{ 5 };
+	const int& y{ x };
+
+	std::cout << x << " " << y << "\n";
+
+	x = 8;
+
+	std::cout << x << " " << y << "\n";
+
+	return 0;
+} */
+
+
+// VERY IMPORTANT - REFERENCING VALUES IN FUNCTIONS AND POINTERS!
+// pointer: type* y {&x}
+
+
+#include <iostream>
+
+int& soma(int& y)
+{
+	int& k{ y };
+
+	if (y > 10)
+	{
+		k = k * 2;
+		return k;
+	}
+	k = k * 3;
+	return k;
+	
+}
+int main()
+{
+	{
+		int y{ 5 };
+
+		int g{ 5 };
+		int& p{ g };
+		p = 8;
+		std::cout << g << std::endl;
+		p = y;
+		std::cout << p << std::endl;
+	}
+
+	int x{};
+	std::cin >> x;
+
+	soma(x);
+
+	std::cout << x << std::endl;
+	
+	int* k{ &x };
+	std::cout << *k << std::endl;
+	*k = 5;                            // Use *k to acess the value and k = &x to define where the pointer is looking at.
+
+	std::cout << *k;
+}

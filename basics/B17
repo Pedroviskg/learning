@@ -1,0 +1,93 @@
+// Enum:
+// To enum, use:
+// enum (name)
+// {
+//   item 1  // valor 0
+//   item 2  // valor 1
+//   ......
+//   item n  // valor n
+// };
+// To apply the Enum:
+
+// name object{item n};
+
+
+// use static_cast<name>(value) to navigate through the enum and use inputs
+#include <iostream>
+#include <string>
+
+enum class Animal
+{
+	pig,       //4
+	chicken,   //2
+	goat,      //4
+	cat,       //
+	dog,
+	duck,
+};
+
+const std::string getAnimalName(int& input)
+{
+	switch (input)
+	{
+	case (0):
+		return std::string{ "pig" };
+	case (1):
+		return std::string{ "chicken" };
+	case (2):
+		return std::string{ "goat" };
+	case (3):
+		return std::string{ "cat" };
+	case (4):
+		return std::string("dog");
+	case (5):
+		return std::string("duck");
+	default:
+		return std::string{ "default" };
+	}
+}
+
+void printNumberLegs(const int& newInput)
+{
+	switch (newInput)
+	{
+	case (0):
+		std::cout << "has 4 legs";
+		return;
+	case  (1):
+			std::cout << "has 2 legs.";
+			return;
+	case  (2):
+		std::cout << "has 4 legs.";
+		return;
+	case  (3):
+		std::cout << "has 4 legs.";
+		return;
+	case  (4):
+		std::cout << "has 4 legs.";
+		return;
+	case  (5):
+		std::cout << "has 2 legs.";
+		return;
+	default:
+		std::cout << "Please, restart the program and try again";
+	}	
+}
+
+int main()
+{
+	int animal{};
+	std::cin >> animal;
+
+	if (getAnimalName(animal) == "default")
+	{
+		std::cout << "?????";
+			return 0;
+	}
+
+	std::cout << "The " << getAnimalName(animal) << " ";
+	printNumberLegs(animal);
+
+	return 0;
+
+}

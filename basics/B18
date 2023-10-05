@@ -1,0 +1,29 @@
+// STRUCTS - A EASIER WAY TO DO REPETITIVE TASKS
+
+#include <iostream>
+#include <string>
+
+struct Adsense
+{
+	int watchers{0};
+	double clicked{0.1};
+	int advalue{1};
+};
+
+const int getWatchers(Adsense& profit)
+{
+	std::cin >> profit.watchers;
+	return profit.watchers;
+}
+const int getProfit(Adsense& profit)
+{
+	return (profit.watchers * profit.clicked * profit.advalue);
+}
+
+int main()
+{
+	Adsense profit;
+	
+	getWatchers(profit);
+	std::cout << "You got R$" << getProfit(profit);
+}

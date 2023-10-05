@@ -8,12 +8,27 @@ struct Fractions
 	int denominator{};
 };
 
+Fractions lastThing(int maxNum, Fractions prodFunc)
+{
+	Fractions temp{ prodFunc };
+	for (int i = 1; i <= maxNum; i++)
+	{
+		
+		if ((temp.numerator % i == 0) && (temp.denominator % i == 0))
+		{
+			(temp.numerator = temp.numerator / i);
+			(temp.denominator = temp.denominator / i);
+		}
+	}
+	return temp;
+}
+
 int getBigger(Fractions num1, Fractions num2)
 {
 	if ((num1.numerator * num2.numerator) > (num1.denominator * num2.denominator))
-		return (num1.numerator * num2.numerator);
-	else
 		return (num1.denominator * num2.denominator);
+	else
+		return (num1.numerator * num2.numerator);
 }
 
 Fractions getFrac()
@@ -38,7 +53,7 @@ tryAgain:
 }  
 Fractions getProd(Fractions numberA, Fractions numberB)
 {
-	Fractions temp{ numberA.numerator, numberB.denominator };
+	Fractions temp{ numberA.numerator*numberB.numerator, (numberB.denominator)*(numberA.denominator) };
 	std::cout << (numberA.numerator) * (numberB.numerator) << "/" << (numberA.denominator) * (numberB.denominator) << "\n";
 
 	return temp;
@@ -49,22 +64,26 @@ int main()
 	Fractions number1{getFrac()};
 	Fractions number2{getFrac()};
 
-	Fractions temp{ getProd(number1, number2) };
+	Fractions prod{ getProd(number2, number1) };
 
-	for (int i = 1; i <= getBigger(number1, number2); i++)
-	{
+	int k = getBigger(number1, number2);
+	Fractions temp{ lastThing(k, prod) };
 
-		if ((temp.numerator % i == 0) && (temp.denominator % i == 0))
-		{
-			(temp.numerator = temp.numerator / i);
-			(temp.denominator = temp.denominator / i);
-		}
-			
-	}
+
 	if (temp.numerator == temp.denominator)
+	{
 		std::cout << "Result: " << temp.numerator;
+	}
+	else if (temp.numerator == 0)
+	{
+		std::cout << 0;
+	}
 	else
-	std::cout << "Result: " << temp.numerator << "/" << temp.denominator;
+	{
+        std::cout << "Result: " << temp.numerator << "/" << temp.denominator;
+	}
+	
+	
 
 	return 0;
 }

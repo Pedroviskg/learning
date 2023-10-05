@@ -1,0 +1,44 @@
+// Worse solution
+
+#include <iostream>
+
+struct Fractions
+{
+	int numerator{};
+	int denominator{};
+};
+
+Fractions getFrac2(Fractions numbers)
+{
+	std::cout << "Insert the numerator: ";
+	std::cin >> numbers.numerator;
+
+	std::cout << "Insert the denominator: ";
+	std::cin >> numbers.denominator;
+
+	std::cout << "Fraction: " << numbers.numerator << "/" << numbers.denominator << "\n";
+	return numbers;
+}
+Fractions getFrac1(Fractions number)
+{
+	std::cout << "Insert the numerator: ";
+	std::cin >> number.numerator;
+
+	std::cout << "Insert the denominator: ";
+	std::cin >> number.denominator;
+	
+	std::cout << "Fraction: " << number.numerator << "/" << number.denominator << "\n";
+	return number;
+}  
+void getProd(Fractions numberA, Fractions numberB)
+{
+	std::cout << (numberA.numerator) * (numberB.numerator) << "/" << (numberA.denominator) * (numberB.denominator);
+}
+
+int main()
+{
+	Fractions number1{};
+	Fractions number2{};
+	getProd(getFrac2(number2), getFrac1(number1));
+
+}

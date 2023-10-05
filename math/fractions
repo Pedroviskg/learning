@@ -1,0 +1,70 @@
+// Worse solution
+
+#include <iostream>
+
+struct Fractions
+{
+	int numerator{};
+	int denominator{};
+};
+
+int getBigger(Fractions num1, Fractions num2)
+{
+	if ((num1.numerator * num2.numerator) > (num1.denominator * num2.denominator))
+		return (num1.numerator * num2.numerator);
+	else
+		return (num1.denominator * num2.denominator);
+}
+
+Fractions getFrac()
+{
+tryAgain:
+
+	Fractions number;
+	std::cout << "Insert the numerator: ";
+	std::cin >> number.numerator;
+
+	std::cout << "Insert the denominator: ";
+	std::cin >> number.denominator;
+
+	if (number.denominator == 0)
+	{
+		std::cout << "Can't divide by zero. Try again. \n";
+		goto tryAgain;
+	}
+	
+	std::cout << "Fraction: " << number.numerator << "/" << number.denominator << "\n";
+	return number;
+}  
+Fractions getProd(Fractions numberA, Fractions numberB)
+{
+	Fractions temp{ numberA.numerator, numberB.denominator };
+	std::cout << (numberA.numerator) * (numberB.numerator) << "/" << (numberA.denominator) * (numberB.denominator) << "\n";
+
+	return temp;
+}
+
+int main()
+{
+	Fractions number1{getFrac()};
+	Fractions number2{getFrac()};
+
+	Fractions temp{ getProd(number1, number2) };
+
+	for (int i = 1; i <= getBigger(number1, number2); i++)
+	{
+
+		if ((temp.numerator % i == 0) && (temp.denominator % i == 0))
+		{
+			(temp.numerator = temp.numerator / i);
+			(temp.denominator = temp.denominator / i);
+		}
+			
+	}
+	if (temp.numerator == temp.denominator)
+		std::cout << "Result: " << temp.numerator;
+	else
+	std::cout << "Result: " << temp.numerator << "/" << temp.denominator;
+
+	return 0;
+}

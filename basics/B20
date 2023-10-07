@@ -1,0 +1,47 @@
+#include <iostream>
+
+class Point3d
+{
+private:
+	int m_x{};
+	int m_y{};
+	int m_z{};
+
+public:
+	void setValue(int x, int y, int z)                               // Defines the values of the points.
+	{
+		m_x = x;
+		m_y = y;
+		m_z = z;
+	}
+
+	void print()
+	{
+		std::cerr << m_x << ", " << m_y << ", " << m_z;             // Prints the number of the point (for debug reasons)
+	}
+
+	bool isEqual(Point3d& k)
+	{
+		return (m_x == k.m_x) && (m_y == k.m_y) && (m_z == k.m_z);  // Bool value.
+	}
+};
+
+
+int main()
+{
+	Point3d point1;
+	point1.setValue(1, 2, 3); 
+
+	Point3d point2;
+	point2.setValue(1, 2, 3);                 
+
+	Point3d point3;
+	std::cout << "point 1 and point 2 are" << (point1.isEqual(point2) ? "" : " not") << " equal\n";  // Use parameters of point1 for the class, but use point2 inside the function.
+
+	point3.setValue(3, 4, 5);
+
+	std::cout << "point 1 and point 3 are" << (point1.isEqual(point3) ? "" : " not") << " equal\n";
+
+	return 0;
+
+}

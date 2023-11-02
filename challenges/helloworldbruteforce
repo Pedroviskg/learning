@@ -1,0 +1,181 @@
+#include <iostream>
+
+
+
+//hello world
+
+
+int main()
+{
+	char a{};
+	char b{};
+	char c{};
+	char d{};
+	char e{};
+	char f{};
+	char g{};
+	char h{};
+	char i{};
+	char j{};
+
+	for (char k = 65; k <= 90; k++)
+	{
+		if (k == 72)
+		{
+			std::cout << k;
+			a = 72;
+			break;
+		}
+		else
+		{
+			std::cout << k << "\n";
+		}
+	}
+	
+	std::cout << "\n";
+
+	for (char k = 65; k <= 90; k++)
+	{
+		if (k == 69)
+		{
+			std::cout << a << k;
+			b = 69;
+			break;
+		}
+		else
+		{
+			std::cout << a << k << "\n";
+		}
+	}
+
+	std::cout << "\n";
+
+	for (char k = 65; k <= 90; k++)
+	{
+		if (k == 76)
+		{
+			std::cout << a << b << k;
+			c = 76;
+			break;
+		}
+		else
+		{
+			std::cout << a << b << k << "\n";
+		}
+	}
+
+	std::cout << "\n";
+
+	for (char k = 65; k <= 90; k++)
+	{
+		if (k == 76)
+		{
+			std::cout << a << b << c << k;
+			d = 76;
+			break;
+		}
+		else
+		{
+			std::cout << a << b << c << k << "\n";
+		}
+	}
+
+	std::cout << "\n";
+
+	for (char k = 65; k <= 90; k++)
+	{
+		if (k == 79)
+		{
+			std::cout << a << b << c << d << k;
+			e = 79;
+			break;
+		}
+		else
+		{
+			std::cout << a << b << c << d << k << "\n";
+		}
+	}
+
+	std::cout << "\n";
+
+	for (char k = 65; k <= 90; k++)
+	{
+		if (k == 87)
+		{
+			std::cout << a << b << c << d << e << " " << k;
+			f = 87;
+			break;
+		}
+		else
+		{
+			std::cout << a << b << c << d << e << " " << k << "\n";
+		}
+	}
+
+
+	std::cout << "\n";
+
+	for (char k = 65; k <= 90; k++)
+	{
+		if (k == 79)
+		{
+			std::cout << a << b << c << d << e << " " << f << k;
+			g = 79;
+			break;
+		}
+		else
+		{
+			std::cout << a << b << c << d << e << " " << f << k << "\n";
+		}
+	}
+
+	std::cout << "\n";
+
+	for (char k = 65; k <= 90; k++)
+	{
+		if (k == 82)
+		{
+			std::cout << a << b << c << d << e << " " << f << g << k;
+			h = 82;
+			break;
+		}
+		else
+		{
+			std::cout << a << b << c << d << e << " " << f << g << k << "\n";
+		}
+	}
+
+	std::cout << "\n";
+
+	for (char k = 65; k <= 90; k++)
+	{
+		if (k == 76)
+		{
+			std::cout << a << b << c << d << e << " " << f << g << h << k;
+			i = 76;
+			break;
+		}
+		else
+		{
+			std::cout << a << b << c << d << e << " " << f << g << h << k << "\n";
+		}
+	}
+
+	std::cout << "\n";
+
+	for (char k = 65; k <= 90; k++)
+	{
+		if (k == 68)
+		{
+			std::cout << a << b << c << d << e << " " << f << g << h << i << k;
+			j = 68;
+			break;
+		}
+		else
+		{
+			std::cout << a << b << c << d << e << " " << f << g << h << i << k << "\n";
+		}
+	}
+
+	return 0;
+}

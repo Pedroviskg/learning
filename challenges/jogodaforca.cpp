@@ -186,7 +186,6 @@ bool guesstheword(wordinfo word)
 	{
 		complete.push_back('_');
 	}
-	std::cout << palavra << std::endl;
 
 	while (counter <= 5)
 	{
@@ -283,11 +282,11 @@ int main()
 
 	if (ver == true)
 	{
-		std::cout << std::endl << "Ganhou!" << std::endl;
+		std::cout << std::endl << "Parabéns, você ganhou!" << std::endl;
 	}
 	else
 	{
-		std::cout << std::endl << "Perdeu!" << std::endl;
+		std::cout << std::endl << "Você perdeu! A palavra era " << Jogo.returnword() << "." << std::endl;
 	}
 	return 0;
 }

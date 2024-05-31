@@ -1,89 +1,74 @@
-// Worse solution
-
 #include <iostream>
 
 struct Fractions
 {
 	int numerator{};
 	int denominator{};
+	int maior{};
+
 };
 
-Fractions lastThing(int maxNum, Fractions prodFunc)
+
+int GetBigger(Fractions a)
 {
-	Fractions temp{ prodFunc };
-	for (int i = 1; i <= maxNum; i++)
+	int maior{a.numerator};
+
+	if(a.numerator < a.denominator)
+	{
+		maior = a.denominator;
+	}
+
+	return maior;
+}
+
+
+Fractions Get(Fractions b)
+{
+	Fractions d = b;
+	for(int i = 1; i <= b.maior; i++)
 	{
 		
-		if ((temp.numerator % i == 0) && (temp.denominator % i == 0))
+		if ((b.numerator % i == 0) and (b.denominator % i == 0))
 		{
-			(temp.numerator = temp.numerator / i);
-			(temp.denominator = temp.denominator / i);
-		}
+			b.numerator   = b.numerator / i;
+			b.denominator = b.denominator / i;
+		};
 	}
-	return temp;
+	d.numerator   = b.numerator;
+	d.denominator = b.denominator;
+	return d;
 }
 
-int getBigger(Fractions num1, Fractions num2)
-{
-	if ((num1.numerator * num2.numerator) > (num1.denominator * num2.denominator))
-		return (num1.denominator * num2.denominator);
-	else
-		return (num1.numerator * num2.numerator);
-}
-
-Fractions getFrac()
-{
-tryAgain:
-
-	Fractions number;
-	std::cout << "Insert the numerator: ";
-	std::cin >> number.numerator;
-
-	std::cout << "Insert the denominator: ";
-	std::cin >> number.denominator;
-
-	if (number.denominator == 0)
-	{
-		std::cout << "Can't divide by zero. Try again. \n";
-		goto tryAgain;
-	}
-	
-	std::cout << "Fraction: " << number.numerator << "/" << number.denominator << "\n";
-	return number;
-}  
-Fractions getProd(Fractions numberA, Fractions numberB)
-{
-	Fractions temp{ numberA.numerator*numberB.numerator, (numberB.denominator)*(numberA.denominator) };
-	std::cout << (numberA.numerator) * (numberB.numerator) << "/" << (numberA.denominator) * (numberB.denominator) << "\n";
-
-	return temp;
-}
 
 int main()
 {
-	Fractions number1{getFrac()};
-	Fractions number2{getFrac()};
+	int numerador;
+	int denominador;
 
-	Fractions prod{ getProd(number2, number1) };
-
-	int k = getBigger(number1, number2);
-	Fractions temp{ lastThing(k, prod) };
-
-
-	if (temp.numerator == temp.denominator)
+	while(true)
 	{
-		std::cout << "Result: " << temp.numerator;
+		std::cin >> numerador;
+		std::cin >> denominador;
+		if(denominador != 0)
+			break;
+		std::cout << "Por favor, escolha um denominador diferente de 0." << std::endl;
 	}
-	else if (temp.numerator == 0)
-	{
-		std::cout << 0;
-	}
+
+
+	Fractions data;
+	data.numerator = numerador;
+	data.denominator = denominador;
+	data.maior = GetBigger(data);
+	
+	Fractions collecteddata;
+	collecteddata = Get(data);
+	
+	if(collecteddata.denominator == 1)
+		std::cout << collecteddata.numerator << std::endl;
 	else
 	{
-        std::cout << "Result: " << temp.numerator << "/" << temp.denominator;
+		std::cout << collecteddata.numerator << "/" << collecteddata.denominator << std::endl;
 	}
 	
-	
-
 	return 0;
 }

@@ -67,7 +67,7 @@ std::vector<int> returnvectors()
 
 int main()
 {
-	std::vector vec = returnvectors();
+	std::vector<int> vec = returnvectors();
 	countMax_And_Min(vec);
 	
 	return 0;

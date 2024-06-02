@@ -4,10 +4,17 @@
 // [8,3,5,2] e [5,4,10,3,1]  ---> 3,5
 
 
-
-void numero_interseccao(std::array<int,4> a, std::array<int,5> b)
+struct Dados
 {
-    std::vector<int> members;
+    std::vector<int> numbers;
+    int quant;
+};
+
+
+Dados numero_interseccao(const std::array<int,4>& a, const std::array<int,5>& b)
+{
+    Dados dados{};
+    std::vector<int> members{};
     int counter = 0;
 
     int maior = a.size();
@@ -46,20 +53,26 @@ void numero_interseccao(std::array<int,4> a, std::array<int,5> b)
             }
         }         
    }
-    int sizevec = members.size();
-    std::cout << "A interseccao eh de " << counter << " e o/os numero/numeros eh/sao: ";
-    for(int l = 0; l < sizevec; l++)
-    {
-        std::cout << members[l] << " ";
-    }
+    
+   dados.numbers = members;   
+   dados.quant   = counter;
+   return dados;
 }
 
 
 int main()
 {
-    std::array<int,4> arr1 = {8,3,1,5};
-    std::array<int,5> arr2 = {5,3,5,1,8};
+    const std::array<int,4> arr1 = {8,3,1,5};
+    const std::array<int,5> arr2 = {5,3,5,1,8};
 
-    numero_interseccao(arr1, arr2);
+    
+    Dados coletados = numero_interseccao(arr1, arr2);
+
+    std::cout << "Quantidade de interseccoes: " << coletados.quant << std::endl;
+    std::cout << "Membros: ";
+    for(int i = 0; i < coletados.numbers.size(); i++)
+    {
+        std::cout << coletados.numbers[i] << " ";
+    }
     return 0;
 }

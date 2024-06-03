@@ -62,8 +62,8 @@ Dados numero_interseccao(const std::array<int,4>& a, const std::array<int,5>& b)
 
 int main()
 {
-    const std::array<int,4> arr1 = {8,3,1,5};
-    const std::array<int,5> arr2 = {5,3,5,1,8};
+    constexpr std::array<int,4> arr1 = {8,3,1,5};
+    constexpr std::array<int,5> arr2 = {5,3,5,1,8};
 
     
     Dados coletados = numero_interseccao(arr1, arr2);
